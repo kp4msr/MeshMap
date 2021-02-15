@@ -1,0 +1,10 @@
+{ 
+   
+        "resource": "/cgi-bin/sysinfo.json",
+        "params" : {
+            "hosts": "?hosts=1",
+            "services": "&services=1",
+            "link_info": "link_info=1"
+        }
+    
+}

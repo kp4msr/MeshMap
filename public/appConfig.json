@@ -1,0 +1,17 @@
+{   
+    "app" : {
+    "name" : "MESHMAP",
+    "mapSettings": {
+        "zoom": "9.5",
+        "mapCenter": { 
+            "lng": "-66.3"
+        }
+    },
+    "contactInfo": {
+        "callsign" : "KP4MSR",
+        "name": "Manuel Santamaria",
+        "email": "kp4msr@winlink.org"
+    },
+    "nodesFilter" : "[a-zA-z]+[0-9][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]*[0-9]+"
+    }
+}
