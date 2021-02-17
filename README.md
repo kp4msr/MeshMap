@@ -11,7 +11,6 @@ Example of WebServers:
 Clone the repository and copy the files from "build" directory to your Web App root folder and thats it!
 Then list the service on your node in order to be available to all mesh users.
 
-
-
 # About Developer 
 Mesh Map were developed by KP4MSR but anyone is welcome to submit a Pull Request, Open Defects or submit recomendations. 
+Contact Email: kp4msr@winlink.org
