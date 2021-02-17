@@ -1,4 +1,4 @@
-# MeshMap
+# Mesh Map 
 Mesh Map is a web based application which discover all the nodes on the mesh! 
 You can host this application on your prefered Web Server and expose it as a service with all Mesh Users.
 
