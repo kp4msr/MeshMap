@@ -53,7 +53,7 @@ There are some important configuration you need on a config file in order to cus
        - KP4MSR-CAYEY-PR-N20
        - KP4MSR-CAYEY-PR-S2
 
-    For for more information about regex 
+    To learn more about regular expressions please visit https://regexone.com/ 
 
 # About Developer 
 Mesh Map were developed by KP4MSR but anyone is welcome to submit a Pull Request, Open Defects or submit recomendations. 
