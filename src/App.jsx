@@ -60,10 +60,15 @@ class App extends Component {
 
     else {
     // Get only the ones that matches the format CALLSIGN-CITY-COUNTRY-TYPE#NODENUMBER 
-    const regex = new RegExp(this.state.appConfig.app.nodesFilter);
+    const regex = new RegExp(this.state.appConfig.nodesFilter);
+    //const regex = "[a-zA-z]+[0-9][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]*[1-9]+"
+
+    //const regex = new RegExp("[a-zA-z]");
+
+    console.log(regex,"REGEX")
+    //console.log(this.state.appConfig.nodesFilter, "NODESFILTER")
     const filteredNodeList = nodes.data.hosts.filter(h => h.name.toUpperCase().trim().match(regex))
-    //console.log("Filtered Node List",filteredNodeList)
-    //.filter(n => n.name.toUpperCase() !== mynode.name.toLocaleUpperCase())
+    console.log("Filtered Node List",filteredNodeList)
 
     // Iterate thru each node to get the details.
     Object.keys(filteredNodeList).forEach((key) => {
@@ -75,25 +80,24 @@ class App extends Component {
     alertify.alert("Unable to find your AREDN node, please verify if you are connected to the MESH.");
   }
 }
-    async componentDidMount() {
+
+  async componentDidMount() {
     const appConfig = await axios.get('/appConfig.json')
     //console.log(appConfig.data)
     this.setState({appConfig: appConfig.data})
-    console.log(appConfig.data,"appConfig.data")
+    //console.log(appConfig.data,"appConfig.data")
     //console.log(this.state,"STATE")
-    document.title = `${this.state.appConfig.app.contactInfo.callsign} - ${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION} by ${process.env.REACT_APP_CREATOR}`;
+    document.title = `${this.state.appConfig.contactInfo.callsign} - ${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION} by ${process.env.REACT_APP_CREATOR}`;
     this.getNodesData();
     //console.log(this.state.appConfig.app.nodesFilter, "NODES FILTER")
-
   }
-
 
   render() {
     return (
       //<Container fluid>
         <div>       
-          <Header nodesData={this.state.nodesData}></Header>      
-          <PrArednMap nodesData={this.state.nodesData} mapSettings={this.state.appConfig.app}/>                  
+          <Header nodesData={this.state.nodesData} appConfig={this.state.appConfig}></Header>      
+          <PrArednMap nodesData={this.state.nodesData} appConfig={this.state.appConfig}/>                  
         </div>
       //</Container>
     );

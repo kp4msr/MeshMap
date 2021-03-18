@@ -38,7 +38,7 @@ class Header extends Component {
             
             <Row>
                 <Col xs lg="2"> 
-                    <Image src="./prarednjpeg-logo1.jpg" width={225} fluid></Image> 
+                    <Image src={this.props.appConfig.logoPath} width={225} fluid></Image> 
                 </Col>                      
                 <Col xs lg="8"></Col>             
                 <Col >                             

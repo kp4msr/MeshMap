@@ -29,6 +29,7 @@ const GrayIcon = new Icon({
   iconSize: [25, 25],
 })
 
+// Function to get the Freq Icon
 function getIcon(freq){
   if(freq !== null && typeof freq !== 'undefined' ) 
   {
@@ -49,27 +50,31 @@ function getIcon(freq){
 
 class PrArednMap extends Component {
 
+
 state = {
+      //appConfig: this.props.appConfig,
       zoom: 9.5,
       mapCenter: {
         lat: 18.2,
-        lng: -66.3,
+        lon: -66.3,
       },
+      
   }
 
   componentDidMount() {
-    //console.log(this.props,"props del MAPA")
-  }
+    //this.setState({appConfig: this.props.appConfig})
+    //console.log(this.state,"ACTUAL STATE")
+
+    }
 
   render() {
-    //const position  = [this.state.lat, this.state.lng];
-    const mapCenter = [this.state.mapCenter.lat, this.state.mapCenter.lng];
-    //const mapCenter = [this.state.appConfig.app.mapSettings.mapCenter.lat, this.state.appConfig.app.mapSettings.mapCenter.lng];
-
-
-
+    
+    if(this.props.appConfig.length === 0) { return null }
+    else {
+    //const mapCenter = [this.state.mapCenter.lat, this.state.mapCenter.lon];
+    const mapCenter = [this.props.appConfig.mapSettings.mapCenter.lat, this.props.appConfig.mapSettings.mapCenter.lon];
     return (
-      <Map className="Map" center={mapCenter} zoom={this.state.zoom}>
+      <Map className="Map" center={mapCenter} zoom={this.props.appConfig.mapSettings.zoom}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -87,7 +92,7 @@ state = {
                  MAC: {n.interfaces[0].mac}<br/>
                  Model: {n.node_details.model}<br/>
                  Firmware Ver: {n.node_details.firmware_version} <br/> </p>            
-                 Neighbors:<br/><ul> { n.link_info.map(m => <li> {m.hostname} ({m.linkType}) </li>)} </ul> </div>
+                 Neighbors:<br/><ul> { n.link_info.map(m => <li key={m.hostname}> {m.hostname} ({m.linkType}) </li>)} </ul> </div>
                 }      
             </Popup>
           </Marker>)}
@@ -95,6 +100,7 @@ state = {
       </Map>
     );
   }
+}
 }
 
 export default PrArednMap;

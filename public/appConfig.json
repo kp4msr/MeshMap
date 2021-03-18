@@ -1,10 +1,11 @@
-{   
-    "app" : {
+{     
     "name" : "MESHMAP",
+    "logoPath":"./prarednjpeg-logo1.jpg",
     "mapSettings": {
         "zoom": "9.5",
         "mapCenter": { 
-            "lng": "-66.3"
+            "lat": "18.2",
+            "lon": "-66.3"
         }
     },
     "contactInfo": {
@@ -12,6 +13,5 @@
         "name": "Manuel Santamaria",
         "email": "kp4msr@winlink.org"
     },
-    "nodesFilter" : "[a-zA-z]+[0-9][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]*[0-9]+"
+    "nodesFilter" : "[a-zA-z]+[0-9][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]+[-][a-zA-Z]*[1-9]+"
     }
-}
