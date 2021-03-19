@@ -5,7 +5,7 @@ it also shows additional information of each node and there are a lot of upcomin
 # Requirements
 The application requires at least a simple web server capable of host HTML doxcuments. 
 
-Example of WebServers:
+Example of Web Servers:
   - IIS (Windows) 
   - Apache (Linux & Windows)
   - Apache Tomcat
@@ -14,11 +14,11 @@ Example of WebServers:
 You can host this application on your prefered Web Server and expose it as a service with all Mesh Users.
 
 Please follow this general steps to install:
-1. Clone the repository and copy the files from "build" directory to your Web App root folder and thats it! (We are asuming you have the web server installed and configured)
+1. Clone the repository and copy the files from "build" directory to your Web App root folder and thats it! (asuming you have the web server installed and configured)
 2. Then list the service on your node in order to be available to all mesh users.
 
 # Configuration
-There are some important configuration you need on a config file in order to customize the app for your needs. 
+There are some important configuration that you need to do in a config file in order to customize the app for your needs. 
 
 1. Open appConfig.json
 2. Edit the App General settings as for example the zoom, your personalized logo and the map center to show your location/country.
@@ -32,7 +32,6 @@ There are some important configuration you need on a config file in order to cus
             "lon": "-66.3"
         }
     }
-
 
     3. Edit your contact information on the json file.
 
