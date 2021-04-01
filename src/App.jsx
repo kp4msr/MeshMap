@@ -82,7 +82,7 @@ class App extends Component {
 }
 
   async componentDidMount() {
-    const appConfig = await axios.get('/appConfig.json')
+    const appConfig = await axios.get('appConfig.json')
     //console.log(appConfig.data)
     this.setState({appConfig: appConfig.data})
     //console.log(appConfig.data,"appConfig.data")

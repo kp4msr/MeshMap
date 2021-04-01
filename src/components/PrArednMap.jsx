@@ -42,7 +42,9 @@ function getIcon(freq){
     else if(freq.includes("3.")){
       return BlueIcon
     }
-    else { return MagentaIcon }
+    else if (freq.includes("900")){
+      return MagentaIcon
+    }
   }
   else return GrayIcon
   
@@ -68,13 +70,13 @@ state = {
     }
 
   render() {
-    
+    //console.log(this.props.appConfig,"appConfig")
     if(this.props.appConfig.length === 0) { return null }
     else {
     //const mapCenter = [this.state.mapCenter.lat, this.state.mapCenter.lon];
     const mapCenter = [this.props.appConfig.mapSettings.mapCenter.lat, this.props.appConfig.mapSettings.mapCenter.lon];
     return (
-      <Map className="Map" center={mapCenter} zoom={this.props.appConfig.mapSettings.zoom}>
+      <Map className="Map" center={mapCenter} zoom={this.props.appConfig.mapSettings.zoom} scrollWheelZoom={false}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
